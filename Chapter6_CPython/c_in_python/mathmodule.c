@@ -1,46 +1,7 @@
 #define PY_SSIZE_T_CLEAN
 #include "Python.h"
 
-static PyObject *method_add(PyObject *self, PyObject *args)
-{
-    PyObject *list_a = NULL;
-    PyObject *list_b = NULL;
-
-    if (!PyArg_ParseTuple(args, "OO", &list_a, &list_b))
-    {
-        PyErr_SetString(PyExc_TypeError, "parameter must be a list.");
-        return NULL;
-    }
-
-    Py_ssize_t len_a = PyList_Size(list_a);
-    Py_ssize_t len_b = PyList_Size(list_b);
-
-    if (len_a != len_b)
-    {
-        PyErr_SetString(PyExc_ValueError, "lists must have equal length.");
-        return NULL;
-    }
-
-    PyObject *result = PyList_New(len_a);
-
-    for (int i = 0; i < len_a; i++)
-    {
-        PyObject *item_a = PyList_GetItem(list_a, i);
-        PyObject *item_b = PyList_GetItem(list_b, i);
-
-        if (!PyLong_Check(item_a) && !PyLong_Check(item_b))
-        {
-            PyErr_SetString(PyExc_ValueError, "Items must be integers..");
-            return NULL;
-        }
-
-        PyList_SetItem(result, i, PyNumber_Add(item_a, item_b));
-    }
-
-    return result;
-}
-
-static PyObject *method_clip(PyObject *self, PyObject *args)
+static PyObject *method_clip_vector(PyObject *self, PyObject *args)
 {
     PyObject *const list = NULL;
     long min_value = 0;
@@ -81,8 +42,7 @@ static PyObject *method_clip(PyObject *self, PyObject *args)
 }
 
 static PyMethodDef math_cpythonMethods[] = {
-    {"add", method_add, METH_VARARGS, "CPython Function"},
-    {"clip", method_clip, METH_VARARGS, "CPython Function"},
+    {"clip_vector", method_clip_vector, METH_VARARGS, "CPython Function"},
     {NULL, NULL, 0, NULL} };
 
 static struct PyModuleDef math_cpythonmodule = {

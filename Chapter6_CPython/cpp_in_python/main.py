@@ -2,15 +2,13 @@ import math_cpp_python
 
 
 def main() -> None:
-    l1 = [1, 2, 3]
-    l2 = [2, 3, 4]
+    lst = [i for i in range(10)]
 
-    l3 = math_cpp_python.add(l1, l2)
-    print(l3)
+    min_value = 2
+    max_value = 4
+    math_cpp_python.clip_vector(lst, min_value, max_value)
 
-    l4 = [-2, 0, 2]
-    math_cpp_python.clip(l4, -1, 1)
-    print(l4)
+    print(lst)
 
 
 if __name__ == "__main__":

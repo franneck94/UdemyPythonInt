@@ -2,21 +2,7 @@
 
 namespace py = pybind11;
 
-py::list add(py::list l1, py::list l2) {
-    py::list result(l1.size());
-
-    if (l1.size() != l2.size())
-        return result;
-
-    for (size_t i = 0; i < l1.size(); ++i)
-    {
-        result[i] = l1[i] + l2[i];
-    }
-
-    return result;
-}
-
-void clip(py::list in, int min_value, int max_value) {
+void clip_vector(py::list in, int min_value, int max_value) {
     size_t idx = 0;
     auto it_in = in.begin();
 
@@ -36,6 +22,5 @@ void clip(py::list in, int min_value, int max_value) {
 }
 
 PYBIND11_MODULE(math_cpp_python, m) {
-    m.def("add", &add, "doc...");
-    m.def("clip", &clip, "doc...");
+    m.def("clip_vector", &clip_vector, "doc...");
 }

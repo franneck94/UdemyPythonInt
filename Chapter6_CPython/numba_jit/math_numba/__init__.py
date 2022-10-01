@@ -18,8 +18,8 @@ def add(a: List[int], b: List[int]) -> np.ndarray:
     return result
 
 
-@cc.export("clip", "i8[:](i8[:], i8, i8)")
-def clip(a: List[int], min_value: int, max_value: int) -> List[int]:
+@cc.export("clip_vector", "i8[:](i8[:], i8, i8)")
+def clip_vector(a: List[int], min_value: int, max_value: int) -> List[int]:
     len_ = len(a)
     for i in range(len_):
         if a[i] < min_value:

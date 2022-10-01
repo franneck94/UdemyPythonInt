@@ -1,5 +1,6 @@
-from mypyc.build import mypycify
 from setuptools import setup
+
+from mypyc.build import mypycify
 
 
 def main() -> None:

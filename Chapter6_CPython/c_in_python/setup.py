@@ -1,16 +1,19 @@
 from setuptools import Extension
 from setuptools import setup
 
+EXTENSIONS = [
+    Extension(
+        name="math_cpython",
+        sources=["mathmodule.c"]
+    )
+]
+
 
 def main() -> None:
-    name = "math_cpython"
-    version = "1.0.0"
-    module = Extension(name, ["mathmodule.c"])
-
     setup(
-        name=name,
-        version=version,
-        ext_modules=[module],
+        name="math_cpython",
+        version="1.0.0",
+        ext_modules=EXTENSIONS,
     )
 
 

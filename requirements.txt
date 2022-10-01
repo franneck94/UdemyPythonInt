@@ -10,4 +10,5 @@ autopep8
 numpy==1.23.*
 Cython==3.0.0a11
 numba==0.56.*
+pybind11
 # mypyc
