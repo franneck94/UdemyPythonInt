@@ -7,8 +7,7 @@ black
 pre-commit
 autopep8
 
-staticfg
-numpy
-Cython
-numba
-mypyc
+numpy==1.23.*
+Cython==3.0.0a11
+numba==0.56.*
+# mypyc

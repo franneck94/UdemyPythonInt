@@ -1,4 +1,2 @@
-[tool.black]
-line-length = 120
-skip-string-normalization = false
-skip-magic-trailing-comma = true
+[build-system]
+requires = ["setuptools", "wheel", "Cython"]
