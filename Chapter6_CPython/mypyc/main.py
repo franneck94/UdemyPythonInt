@@ -1,5 +1,3 @@
-import numpy as np
-
 import math_mypyc
 
 

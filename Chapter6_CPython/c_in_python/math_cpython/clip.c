@@ -43,10 +43,12 @@ static PyObject *method_clip_vector(PyObject *self, PyObject *args)
 
 static PyMethodDef math_cpythonMethods[] = {
     {"clip_vector", method_clip_vector, METH_VARARGS, "CPython Function"},
-    {NULL, NULL, 0, NULL} };
+    {NULL, NULL, 0, NULL}
+};
 
 static struct PyModuleDef math_cpythonmodule = {
-    PyModuleDef_HEAD_INIT, "math_cpython", "CPython Module", -1, math_cpythonMethods };
+    PyModuleDef_HEAD_INIT, "math_cpython", "CPython Module", -1, math_cpythonMethods
+};
 
 PyMODINIT_FUNC PyInit_math_cpython(void)
 {

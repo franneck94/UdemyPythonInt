@@ -23,7 +23,7 @@ def naive_cython_clip_vector(
     vector_out: array.array,
 ) -> None:
     _naive_cython_clip_vector(
-        vector_in, min_value, max_value, vector_in
+        vector_in, min_value, max_value, vector_out
     )
 
 

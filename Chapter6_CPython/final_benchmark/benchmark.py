@@ -13,8 +13,8 @@ import math_numba
 
 
 LIST = [i for i in range(100_000)]
-ARRAY = np.array([i for i in range(100_000)], dtype=np.int64)
-ARRAY_ = array.array("f", [i for i in range(100_000)])
+NP_ARRAY = np.array([i for i in range(100_000)], dtype=np.int64)
+PY_ARRAY = array.array("f", [i for i in range(100_000)])
 
 NUM_ROUNDS = 20
 NUM_ITERATIONS = 100
@@ -23,7 +23,7 @@ NUM_ITERATIONS = 100
 def test_cython_clip(benchmark: Any) -> None:
     benchmark.pedantic(
         math_cython.cython_clip_vector,
-        args=(ARRAY_, -1, 1, ARRAY_),
+        args=(PY_ARRAY, -1, 1, PY_ARRAY),
         rounds=NUM_ROUNDS,
         iterations=NUM_ITERATIONS,
     )
@@ -32,7 +32,7 @@ def test_cython_clip(benchmark: Any) -> None:
 def test_np_clip(benchmark: Any) -> None:
     benchmark.pedantic(
         np.clip,
-        args=(ARRAY, -1, 1, ARRAY),
+        args=(NP_ARRAY, -1, 1, NP_ARRAY),
         rounds=NUM_ROUNDS,
         iterations=NUM_ITERATIONS,
     )
@@ -41,7 +41,7 @@ def test_np_clip(benchmark: Any) -> None:
 def test_numba_clip(benchmark: Any) -> None:
     benchmark.pedantic(
         math_numba.clip_vector,
-        args=(ARRAY, -1, 1),
+        args=(NP_ARRAY, -1, 1),
         rounds=NUM_ROUNDS,
         iterations=NUM_ITERATIONS,
     )

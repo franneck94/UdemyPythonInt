@@ -4,8 +4,7 @@ from setuptools import setup
 
 
 ext_modules = [
-    Pybind11Extension("math_cpp_python",
-                      ["mathmodule.cpp"]),
+    Pybind11Extension("math_cpp_python", ["math_cpp_python/clip.cpp"]),
 ]
 
 
