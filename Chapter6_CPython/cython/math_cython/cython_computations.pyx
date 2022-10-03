@@ -2,14 +2,6 @@ cimport cython
 
 
 ctypedef fused vector_type:
-    unsigned char
-    char
-    unsigned short
-    short
-    unsigned int
-    int
-    unsigned long long
-    long long
     float
     double
 

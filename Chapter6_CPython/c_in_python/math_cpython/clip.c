@@ -4,12 +4,12 @@
 static PyObject *method_clip_vector(PyObject *self, PyObject *args)
 {
     PyObject *const list = NULL;
-    long min_value = 0;
-    long max_value = 0;
+    double min_value = 0.0;
+    double max_value = 0.0;
 
-    if (!PyArg_ParseTuple(args, "Oii", &list, &min_value, &max_value))
+    if (!PyArg_ParseTuple(args, "Odd", &list, &min_value, &max_value))
     {
-        PyErr_SetString(PyExc_TypeError, "parameter must be a list.");
+        PyErr_SetString(PyExc_TypeError, "error");
 
         return NULL;
     }
@@ -20,21 +20,21 @@ static PyObject *method_clip_vector(PyObject *self, PyObject *args)
     {
         const PyObject *const item = PyList_GetItem(list, i);
 
-        if (!PyLong_Check(item))
+        if (!PyFloat_Check(item))
         {
-            PyErr_SetString(PyExc_ValueError, "Items must be integer..");
+            PyErr_SetString(PyExc_ValueError, "Items must be 64bit floats..");
             return NULL;
         }
 
-        const long temp = PyLong_AsLong(item);
+        const double temp = PyFloat_AsDouble(item);
 
         if (temp < min_value)
         {
-            PyList_SetItem(list, i, PyLong_FromLong(min_value));
+            PyList_SetItem(list, i, PyFloat_FromDouble(min_value));
         }
         else if (temp > max_value)
         {
-            PyList_SetItem(list, i, PyLong_FromLong(max_value));
+            PyList_SetItem(list, i, PyFloat_FromDouble(max_value));
         }
     }
 

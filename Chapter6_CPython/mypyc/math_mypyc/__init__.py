@@ -1,7 +1,9 @@
 from typing import List
 
 
-def clip_vector(a: List[int], min_value: int, max_value: int) -> List[int]:
+def clip_vector(
+    a: List[float], min_value: float, max_value: float
+) -> List[float]:
     len_ = len(a)
     for i in range(len_):
         if a[i] < min_value:

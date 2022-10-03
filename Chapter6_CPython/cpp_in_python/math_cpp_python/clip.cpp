@@ -2,13 +2,13 @@
 
 namespace py = pybind11;
 
-void clip_vector(py::list in, int min_value, int max_value) {
+void clip_vector(py::list in, double min_value, double max_value) {
     size_t idx = 0;
     auto it_in = in.begin();
 
     for (; it_in != in.end(); ++it_in, ++idx)
     {
-        const int curr_val = it_in->cast<int>();
+        const double curr_val = it_in->cast<double>();
 
         if (curr_val < min_value)
         {
