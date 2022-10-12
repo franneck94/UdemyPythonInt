@@ -4,6 +4,7 @@ import asyncio
 async def f(name):
     await asyncio.sleep(2)
     print(f"Task {name}")
+    return name
 
 
 async def main1():
