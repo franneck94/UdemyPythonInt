@@ -1,6 +1,6 @@
-import math
+from concurrent.futures import ThreadPoolExecutor
 import time
-
+import math
 
 NUMBERS = [
     18014398777917439,
@@ -35,12 +35,12 @@ def is_prime(n: int) -> bool:
 def main() -> None:
     start = time.perf_counter_ns()
 
-    for number in NUMBERS:
-        result = is_prime(number)
-        print(result)
+    with ThreadPoolExecutor(max_workers=len(NUMBERS)) as ex:
+        for number, prime in zip(NUMBERS, ex.map(is_prime, NUMBERS)):
+            print(f"{number} is prime: {prime}")
 
     end = time.perf_counter_ns()
-    print(f"Took: {(end - start) / 1e09} s")
+    print(f"time: {(end - start) / 1e09} s")
 
 
 if __name__ == "__main__":

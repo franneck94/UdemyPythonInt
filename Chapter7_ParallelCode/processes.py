@@ -1,5 +1,6 @@
 import math
 import time
+from multiprocessing import Process
 
 
 NUMBERS = [
@@ -33,14 +34,17 @@ def is_prime(n: int) -> bool:
 
 
 def main() -> None:
+    procceses = [Process(target=is_prime, args=(n,)) for n in NUMBERS]
+
     start = time.perf_counter_ns()
 
-    for number in NUMBERS:
-        result = is_prime(number)
-        print(result)
+    [p.start() for p in procceses]
+    [p.join() for p in procceses]
 
     end = time.perf_counter_ns()
-    print(f"Took: {(end - start) / 1e09} s")
+    print(f"time: {(end - start) / 1e09} s")
+
+    [p.close() for p in procceses]
 
 
 if __name__ == "__main__":

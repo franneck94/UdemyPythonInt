@@ -8,14 +8,6 @@ NUMBERS = [
     18014398777917439,
     18014398777917439,
     18014398777917439,
-    18014398777917439,
-    18014398777917439,
-    18014398777917439,
-    18014398777917439,
-    18014398777917439,
-    18014398777917439,
-    18014398777917439,
-    18014398777917439,
 ]
 
 
@@ -41,7 +33,6 @@ def is_prime(n: int) -> bool:
     return True
 
 
-
 def main() -> None:
     start = time.perf_counter_ns()
 
@@ -50,7 +41,7 @@ def main() -> None:
     print(result)
 
     end = time.perf_counter_ns()
-    print(f"Took: {(end - start) / 1000000.0} ms")
+    print(f"Took: {(end - start) / 1e09} s")
 
 
 if __name__ == "__main__":
