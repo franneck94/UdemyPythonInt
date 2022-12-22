@@ -15,7 +15,7 @@ LIST = [float(i) for i in range(100_000)]
 NP_ARRAY = np.array([float(i) for i in range(100_000)], dtype=np.float64)
 PY_ARRAY = array.array("f", [float(i) for i in range(100_000)])
 
-NUM_ROUNDS = 20
+NUM_ROUNDS = 50
 NUM_ITERATIONS = 100
 
 
