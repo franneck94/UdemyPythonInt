@@ -1,0 +1,16 @@
+# Linting/Tooling
+pylint
+flake8
+mypy
+isort
+black
+pre-commit
+autopep8
+
+pytest
+pytest-benchmark
+
+numpy==1.23.*
+Cython==3.0.0a11
+numba==0.56.*
+pybind11==2.10.*
