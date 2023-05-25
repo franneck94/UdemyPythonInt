@@ -8,7 +8,6 @@ import numpy as np
 import math_cpp_python
 import math_cpython
 import math_cython
-import math_mypyc
 
 
 LIST = [float(i) for i in range(100_000)]

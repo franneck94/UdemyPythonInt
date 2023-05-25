@@ -2,7 +2,7 @@ import math_mypyc
 
 
 def main() -> None:
-    lst = [i for i in range(10)]
+    lst = list(range(10))
 
     min_value = 2
     max_value = 4

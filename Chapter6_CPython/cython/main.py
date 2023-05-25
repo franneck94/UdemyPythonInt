@@ -5,8 +5,8 @@ import math_cython
 
 def main() -> None:
     lst = [float(i) for i in range(10)]
-    arr1 = array.array("f", [i for i in range(10)])
-    arr2 = array.array("f", [i for i in range(10)])
+    arr1 = array.array("f", list(range(10)))
+    arr2 = array.array("f", list(range(10)))
 
     min_value = 2.0
     max_value = 4.0

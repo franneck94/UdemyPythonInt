@@ -1,5 +1,4 @@
 import math_cpython
-import math_cython
 
 
 def main() -> None:

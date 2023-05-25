@@ -7,8 +7,8 @@ CYTHON_EXTENSIONS = [
     Extension(
         name="math_cython.cython_computations",
         sources=["math_cython/cython_computations.pyx"],
-        extra_compile_args=['/openmp'],
-        extra_link_args=['/openmp'],
+        extra_compile_args=["/openmp"],
+        extra_link_args=["/openmp"],
     )
 ]
 

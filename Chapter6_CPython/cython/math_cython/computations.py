@@ -1,16 +1,15 @@
 # pylint: disable=import-error
 import array
-from typing import List
 
 from .cython_computations import _cython_clip_vector
 from .cython_computations import _naive_cython_clip_vector
 
 
 def python_clip_vector(
-    vector_in: List[float],
+    vector_in: list[float],
     min_value: float,
     max_value: float,
-    vector_out: List[float],
+    vector_out: list[float],
 ) -> None:
     for idx in range(len(vector_in)):
         vector_out[idx] = min(max(vector_in[idx], min_value), max_value)

@@ -4,12 +4,12 @@ from setuptools import setup
 
 def main() -> None:
     setup(
-        name='math_mypyc',
-        version='1.0.0',
-        packages=['math_mypyc'],
+        name="math_mypyc",
+        version="1.0.0",
+        packages=["math_mypyc"],
         ext_modules=mypycify(
             [
-                'math_mypyc/__init__.py',
+                "math_mypyc/__init__.py",
             ]
         ),
     )
