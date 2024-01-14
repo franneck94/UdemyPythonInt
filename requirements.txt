@@ -1,17 +1,6 @@
-setuptools>=67.8.0
+-r requirements-dev.txt
 
-# Linting/Tooling
-black>=23.3.0
-isort>=5.12.0
-mypy>=1.3.0
-pre-commit>=3.3.2
-ruff>=0.0.270
-pyright>=1.1.309
-
-pytest
-pytest-benchmark
-
-numpy==1.23.*
-Cython==3.0.0a11
-numba==0.56.*
-pybind11==2.10.*
+numpy
+Cython
+numba
+pybind11
