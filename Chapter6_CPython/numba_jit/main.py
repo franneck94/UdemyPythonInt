@@ -1,6 +1,5 @@
-import numpy as np
-
 import math_numba
+import numpy as np
 
 
 def main() -> None:

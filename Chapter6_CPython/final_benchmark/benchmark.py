@@ -3,11 +3,10 @@
 import array
 from typing import Any
 
-import numpy as np
-
 import math_cpp_python
 import math_cpython
 import math_cython
+import numpy as np
 
 
 LIST = [float(i) for i in range(100_000)]
