@@ -38,13 +38,13 @@ def main() -> None:
 
     start = time.perf_counter_ns()
 
-    [p.start() for p in procceses]
-    [p.join() for p in procceses]
+    [p.start() for p in procceses]  # type: ignore
+    [p.join() for p in procceses]  # type: ignore
 
     end = time.perf_counter_ns()
     print(f"time: {(end - start) / 1e09} s")
 
-    [p.close() for p in procceses]
+    [p.close() for p in procceses]  # type: ignore
 
 
 if __name__ == "__main__":
