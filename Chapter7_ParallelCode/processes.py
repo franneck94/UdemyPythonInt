@@ -12,12 +12,12 @@ NUMBERS = [
 
 
 def is_prime(n: int) -> bool:
-    if n < 2:
+    if n < 2:  # noqa: PLR2004
         return False
-    if n in (2, 3, 5, 7, 11, 13, 17):
+    if n in {2, 3, 5, 7, 11, 13, 17}:
         return True
     if (
-        n % 2 == 0
+        n % 2 == 0  # noqa: PLR0916
         or n % 3 == 0
         or n % 5 == 0
         or n % 7 == 0
@@ -27,10 +27,7 @@ def is_prime(n: int) -> bool:
     ):
         return False
     upper_limit = int(math.sqrt(n)) + 1
-    for i in range(19, upper_limit, 2):
-        if n % i == 0:
-            return False
-    return True
+    return all(n % i != 0 for i in range(19, upper_limit, 2))
 
 
 def main() -> None:
