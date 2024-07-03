@@ -1,2 +1,2 @@
-def hello_world():  # noqa: ANN201
+def hello_world():
     print("Hello World")
