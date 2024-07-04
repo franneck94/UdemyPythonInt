@@ -9,7 +9,7 @@ CYTHON_EXTENSIONS = [
         sources=["math_cython/cython_computations.pyx"],
         extra_compile_args=["/openmp"],
         extra_link_args=["/openmp"],
-    )
+    ),
 ]
 
 EXT_MODULES = cythonize(CYTHON_EXTENSIONS, language_level="3")

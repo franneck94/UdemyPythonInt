@@ -10,7 +10,7 @@ def main() -> None:
         ext_modules=mypycify(
             [
                 "math_mypyc/__init__.py",
-            ]
+            ],
         ),
     )
 
